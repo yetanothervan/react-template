@@ -1,0 +1,16 @@
+{
+	"Create react function component": {
+		"scope": "typescriptreact",
+		"prefix": "rcfc",
+		"body": [
+			"import React, { FC } from \"react\";",
+			"",
+			"export const ${1:$TM_FILENAME_BASE}: FC = () => {",
+			"\treturn <div>$TM_FILENAME_BASE</div>;",
+			"}",
+			"",
+			"export default $TM_FILENAME_BASE"
+		],
+		"description": "Create react function component"
+	}
+}

@@ -6,8 +6,9 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path: __dirname + '/dist/',
-        publicPath: ''
+        publicPath: '/'
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
