@@ -2,7 +2,8 @@
 
 module.exports = {
     entry: {
-        cons: "./src/Index.tsx"
+        bundle: "./src/Index.tsx",
+        // lib: "./src/lib/lib.ts"
     },
     output: {
         filename: '[name].bundle.js',
@@ -12,6 +13,27 @@ module.exports = {
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            minSize: 1,
+            minChunks: 1,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    },
+    node: {
+        fs: 'empty'
     },
     module: {
         rules: [
